@@ -372,3 +372,111 @@ header .interface {
     .secao-sobre p { font-size: 18px !important; }
 }
 
+@media (min-width: 769px) {
+    /* --- CORREÇÃO DO CHAVEIRO --- */
+    .icone-chaveiro {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .icone-chaveiro i {
+        /* Faz os dois ícones se sobreporem ou ficarem próximos */
+        margin: -5px !important; 
+    }
+
+    /* --- ANIMAÇÕES PERSONALIZADAS --- */
+    
+    /* 1. CHAVEIRO: Efeito "chacoalhado de chaves" */
+    @keyframes chacoalhar {
+        0%, 100% { transform: rotate(-10deg); }
+        50% { transform: rotate(10deg); }
+    }
+    .item-produto-box:nth-child(1):hover .icone-chaveiro {
+        animation: chacoalhar 0.4s ease-in-out infinite;
+    }
+
+    /* 2. CANETAS: Movimento em S (Boomerang com Zoom) */
+    @keyframes boomerang {
+        0% { transform: scale(1) translateX(0); }
+        50% { transform: scale(1.3) translateX(15px); }
+        100% { transform: scale(1) translateX(0); }
+    }
+    .item-produto-box:nth-child(2):hover i {
+        animation: boomerang 2.5s ease-in-out infinite;
+    }
+
+    /* 3. PORTA COPOS: Giro contínuo no eixo */
+    @keyframes giro-eixo {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    .item-produto-box:nth-child(3):hover i {
+        animation: giro-eixo 3s linear infinite;
+    }
+
+    /* 4. MARCA PÁGINAS: Surgindo de cima (Fade in + Drop down) */
+    @keyframes surgindo-queda {
+        0% { opacity: 0; transform: translateY(-40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .item-produto-box:nth-child(4):hover i {
+        animation: surgindo-queda 1.2s ease-out forwards;
+    }
+}
+
+/* FORÇANDO LIMPEZA NO CELULAR PARA PÁGINAS INTERNAS */
+@media (max-width: 768px) {
+    /* 1. Esconde o menu lateral que está invadindo a página */
+    .sidebar, .menu-lateral, nav.lateral {
+        display: none !important;
+    }
+
+    /* 2. Expande o conteúdo principal para ocupar 100% da largura */
+    body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden; /* Corta qualquer coisa que tente ultrapassar a largura */
+    }
+
+    /* 3. Ajusta o container principal da página interna */
+    /* Substitua '.content-main' pela classe que envolve o conteúdo no chaveiros.html */
+    .content-main, .container-interno {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 10px !important;
+        display: block !important; /* Força empilhamento */
+    }
+}
+
+@media (max-width: 768px) {
+    /* 1. Faz o menu ocupar pouco espaço no topo, não a tela toda */
+    .sidebar {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important; /* Altura automática baseada no conteúdo */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        padding: 10px 0 !important;
+        background: #000; /* Ajuste conforme a cor do seu fundo */
+    }
+
+    /* 2. Remove o espaço da lista de links */
+    .sidebar ul {
+        display: flex;
+        flex-direction: row; /* Coloca os links lado a lado se couberem */
+        flex-wrap: wrap;     /* Quebra linha se necessário */
+        justify-content: center;
+        gap: 15px;
+        padding: 0 !important;
+    }
+
+    /* 3. Ajusta o conteúdo principal para subir e ocupar o topo */
+    .content-main {
+        margin-top: 0 !important;
+        padding-top: 10px !important;
+    }
+}
+
