@@ -255,9 +255,34 @@ header .interface {
 .content-main { margin-left: 250px; padding: 40px; }
 
 /* Ajuste de responsividade básico */
+/* --- CORREÇÃO DE RESPONSIVIDADE PARA MOBILE --- */
 @media (max-width: 768px) {
-    .sidebar { width: 100%; height: auto; position: relative; }
-    .content-main { margin-left: 0; }
+    /* Impede que a página seja mais larga que o próprio celular */
+    html, body {
+        width: 100%;
+        overflow-x: hidden; /* Corta qualquer coisa que tente "vazar" para os lados */
+    }
+
+    /* Força o conteúdo principal a respeitar as margens */
+    .content-main {
+        margin-left: 0 !important; /* Remove o recuo da sidebar que sumiu */
+        padding: 10px !important;
+        width: 100%;
+    }
+
+    /* Ajusta o card de produtos para ficar centralizado e ocupar o espaço correto */
+    .card-produto {
+        width: 95% !important; /* Ocupa quase toda a tela, mas deixa uma margem mínima */
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    /* Garante que imagens e botões não empurrem a tela */
+    img, .btn-comprar-zap {
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
 }
 
 /* Grid de Produtos (Páginas Internas) */
@@ -339,6 +364,7 @@ img, video {
     color: #0086dfe1; /* Escolha a cor que você quiser para os links */
     text-decoration: none; /* Remove aquele sublinhado feio */
     font-weight: bold;
+    text-align: center;
 }
 
 .footer-column p {
@@ -350,6 +376,7 @@ img, video {
     display: inline; /* Garante que não quebre linha */
     white-space: nowrap; /* Impede a quebra de linha forçada */
     font-weight: bold;
+    
 }
 
 .footer-column ul li a {
