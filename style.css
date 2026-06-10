@@ -255,33 +255,24 @@ header .interface {
 .content-main { margin-left: 250px; padding: 40px; }
 
 /* Ajuste de responsividade básico */
-/* --- CORREÇÃO DE RESPONSIVIDADE PARA MOBILE --- */
 @media (max-width: 768px) {
-    /* Impede que a página seja mais larga que o próprio celular */
-    html, body {
-        width: 100%;
-        overflow-x: hidden; /* Corta qualquer coisa que tente "vazar" para os lados */
+    /* ... (mantenha os outros ajustes que fizemos) ... */
+
+    .grid-produtos {
+        /* Usamos 'minmax(140px, 1fr)' para permitir que caibam dois itens lado a lado */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+        gap: 10px !important;
+        padding: 5px !important;
     }
 
-    /* Força o conteúdo principal a respeitar as margens */
-    .content-main {
-        margin-left: 0 !important; /* Remove o recuo da sidebar que sumiu */
-        padding: 10px !important;
-        width: 100%;
-    }
-
-    /* Ajusta o card de produtos para ficar centralizado e ocupar o espaço correto */
     .card-produto {
-        width: 95% !important; /* Ocupa quase toda a tela, mas deixa uma margem mínima */
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 15px;
+        /* Reduzimos o tamanho fixo para que os cards não fiquem gigantes */
+        max-width: 100% !important;
+        padding: 10px !important;
     }
 
-    /* Garante que imagens e botões não empurrem a tela */
-    img, .btn-comprar-zap {
-        max-width: 100% !important;
-        box-sizing: border-box;
+    .card-produto img {
+        height: 150px !important; /* Diminuímos a altura da imagem para caber melhor */
     }
 }
 
