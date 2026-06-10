@@ -1,4 +1,6 @@
-/* ESTILO GERAL E RESET */
+/* ==========================================================================
+   ESTILO GERAL E RESET
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +18,9 @@ body {
     min-height: 100vh;
 }
 
-/* CONTAINER PRINCIPAL */
+/* ==========================================================================
+   CONTAINER PRINCIPAL
+   ========================================================================== */
 .interface {
     max-width: 1400px;
     margin: 0 auto;
@@ -31,127 +35,9 @@ body {
     padding: 10px 0;
 }
 
-.secao-produtos {
-    padding: 40px 0;
-}
-
-/* CARDS DE PRODUTOS */
-.item-produto-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex: 1 1 200px;
-    max-width: 250px;
-    height: 200px;
-    margin-top: 10px;
-    border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    text-decoration: none;
-    color: #fff;
-    transition: 0.4s ease;
-}
-
-.item-produto-box:hover {
-    transform: scale(1.05);
-    background-color: rgba(212, 175, 55, 0.1);
-    border-color: #d4af37;
-    cursor: pointer;
-}
-
-/* --- ANIMAÇÕES PERSONALIZADAS --- */
-
-/* 1. CHAVEIRO: Balançando (efeito pêndulo) */
-.item-produto-box:hover .icone-chaveiro {
-    animation: balancar 0.6s ease-in-out infinite;
-}
-
-@keyframes balancar {
-    0%, 100% { transform: rotate(-10deg); }
-    50% { transform: rotate(10deg); }
-}
-
-/* 2. CANETA: Movimento em S + Zoom */
-.item-produto-box:hover .bi-pen {
-    animation: pincelarS 1.5s ease-in-out infinite;
-}
-
-@keyframes pincelarS {
-    0% { 
-        transform: scale(0.8) translate(0, 0); 
-    }
-    25% { 
-        transform: scale(0.9) translate(10px, -10px); 
-    }
-    50% { 
-        transform: scale(1.1) translate(0, 0); 
-    }
-    75% { 
-        transform: scale(0.9) translate(-10px, 10px); 
-    }
-    100% { 
-        transform: scale(0.8) translate(0, 0); 
-    }
-}
-
-/* 3. PORTA COPOS: Rotação constante (estilo startup) */
-.item-produto-box:hover .bi-hexagon {
-    animation: girar 2s linear infinite;
-}
-
-@keyframes girar {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* 4. MARCA PÁGINAS: Surgindo e deslizando */
-.item-produto-box:hover .bi-bookmark {
-    animation: surgir 0.6s ease-out forwards;
-}
-
-@keyframes surgir {
-    0% { transform: translateY(-30px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
-
-/* ÍCONE CHAVEIRO EDITADO */
-.icone-chaveiro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    color: #d4af37;
-    margin-bottom: 10px;
-}
-
-.icone-chaveiro .bi-circle {
-    font-size: 25px;
-    margin-right: -10px;
-    z-index: 1;
-}
-
-.icone-chaveiro .bi-star-fill {
-    font-size: 35px;
-    z-index: 2;
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
-}
-
-.item-produto-box i {
-    font-size: 50px;
-    color: #d4af37;
-    margin-bottom: 15px;
-    transition: 0.4s ease;
-}
-
-.item-produto-box h3 {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-/* CABEÇALHO */
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
 header {
     padding: 20px 4%;
     background: rgba(0, 0, 0, 0.2);
@@ -188,7 +74,15 @@ header .interface {
     cursor: pointer;
 }
 
-/* TÍTULOS */
+/* ==========================================================================
+   SEÇÕES E PRODUTOS (HOME)
+   ========================================================================== */
+.secao-produtos, 
+.secao-sobre, 
+.secao-diferenciais {
+    padding: 40px 0;
+}
+
 .titulo {
     text-align: center;
     margin-bottom: 20px;
@@ -198,90 +92,39 @@ header .interface {
     color: #d4af37;
 }
 
-/* SEÇÕES EXTRAS */
-.secao-sobre {
-    padding: 80px 4%;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.02);
-}
-
-.secao-sobre p {
-    max-width: 800px;
-    margin: 20px auto;
-    color: #ccc;
-    line-height: 1.6;
-}
-
-.secao-diferenciais {
-    padding: 60px 4%;
-}
-
-.item-dif {
-    text-align: center;
-    flex: 1 1 200px;
-    padding: 20px;
-}
-
-.item-dif i {
-    font-size: 40px;
-    color: #d4af37;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.item-dif h3 {
-    margin-bottom: 10px;
-}
-
-/* Sidebar Fixa */
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: #0d131a;
-    border-right: 1px solid #d4af37;
-    padding: 20px;
+.item-produto-box {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 200px;
+    max-width: 250px;
+    height: 200px;
+    margin-top: 10px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    text-decoration: none;
+    color: #fff;
+    transition: 0.4s ease;
 }
 
-.sidebar ul { list-style: none; margin-top: 40px; }
-.sidebar li { margin-bottom: 20px; }
-.sidebar a { color: #fff; text-decoration: none; font-size: 1.1em; }
-.sidebar a.active { color: #d4af37; font-weight: bold; }
-
-.content-main { margin-left: 250px; padding: 40px; }
-
-/* Ajuste de responsividade básico */
-@media (max-width: 768px) {
-    /* ... (mantenha os outros ajustes que fizemos) ... */
-
-    .grid-produtos {
-        /* Usamos 'minmax(140px, 1fr)' para permitir que caibam dois itens lado a lado */
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
-        gap: 10px !important;
-        padding: 5px !important;
-    }
-
-    .card-produto {
-        /* Reduzimos o tamanho fixo para que os cards não fiquem gigantes */
-        max-width: 100% !important;
-        padding: 10px !important;
-    }
-
-    .card-produto img {
-        height: 150px !important; /* Diminuímos a altura da imagem para caber melhor */
-    }
+.item-produto-box:hover {
+    transform: scale(1.05);
+    background-color: rgba(212, 175, 55, 0.1);
+    border-color: #d4af37;
 }
 
-/* Grid de Produtos (Páginas Internas) */
+/* ==========================================================================
+   GRID DE PRODUTOS (PÁGINAS INTERNAS)
+   ========================================================================== */
 .grid-produtos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
+    padding: 20px;
 }
 
 .card-produto {
@@ -293,12 +136,6 @@ header .interface {
     transition: 0.4s ease;
 }
 
-.card-produto:hover {
-    border-color: #d4af37;
-    transform: translateY(-10px);
-    background-color: rgba(212, 175, 55, 0.05);
-}
-
 .card-produto img {
     width: 100%;
     height: 250px;
@@ -307,160 +144,185 @@ header .interface {
     margin-bottom: 15px;
 }
 
-.card-produto h3 {
-    font-size: 1.2em;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.btn-side-encomendar {
-    margin-top: auto;
-    text-align: center;
-    padding: 12px;
-    background: #d4af37;
-    color: #000 !important;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-img, video {
-    max-width: 100%;
-    height: auto;
-}
-
-/* CSS do Rodapé */
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
 .footer {
     background-color: #665234;
     padding: 40px 20px;
     margin-top: 50px;
-    border-top: 1px solid #ddd;
     text-align: center;
 }
 
 .footer-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 300px;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .footer-column h3 {
     margin-bottom: 15px;
-    font-size: 1.1em;
     color: #ff9900;
 }
 
-.footer-column a {
-    color: #0086dfe1; /* Escolha a cor que você quiser para os links */
-    text-decoration: none; /* Remove aquele sublinhado feio */
-    font-weight: bold;
-    text-align: center;
-}
-
-.footer-column p {
-    color: #0086dfe1; 
-}
-
+.footer-column a, 
 .info-text {
-    color: #0086dfe1; /* Ajuste para a cor clara que você deseja */
-    display: inline; /* Garante que não quebre linha */
-    white-space: nowrap; /* Impede a quebra de linha forçada */
-    font-weight: bold;
-    
-}
-
-.footer-column ul li a {
-    text-decoration: none;
     color: #0086dfe1;
-    font-size: 0.9em;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-bottom {
-    margin-top: 30px;
-    font-size: 0.8em;
-    color: #000000;
-}
-
-/* Estilo do Card */
-.grid-produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* ==========================================================================
+   SIDEBAR E RESPONSIVIDADE
+   ========================================================================== */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #0d131a;
+    border-right: 1px solid #d4af37;
     padding: 20px;
 }
 
-.card-produto {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    background: #fff;
-    max-width: 300px; /* Isso limita o card a no máximo 300px de largura */
-    margin: 0 auto;   /* Isso centraliza o card na página */
+.content-main {
+    margin-left: 250px;
+    padding: 40px;
 }
 
-/* Botão WhatsApp */
+/* ==========================================================================
+   CORREÇÃO FINAL DE RESPONSIVIDADE PARA CELULAR (ADICIONAR AO FINAL)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Ajuste da Logo e Cabeçalho */
+    header .interface {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .logo img {
+        max-width: 100px !important; /* Diminui a logo no celular */
+    }
+
+    .menu-desktop ul {
+        gap: 20px !important; /* Diminui o espaço do menu */
+    }
+
+    /* 2. Ajuste do Topo (Imagem e Vídeo lado a lado) */
+    .secao-topo .flex {
+        gap: 20px !important; /* Diminui o espaçamento */
+    }
+
+    .img-topo {
+        flex: 1 1 45% !important; /* Força os dois a dividirem o espaço */
+        max-width: 45% !important;
+    }
+
+    .img-topo img, 
+    .img-topo video {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 3. Ajuste do Grid de Produtos (2 colunas) */
+    .secao-produtos .flex {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+    }
+
+    .item-produto-box {
+        max-width: 100% !important;
+        height: 150px !important; /* Altura reduzida para mobile */
+    }
+
+    /* 4. Ajuste dos Diferenciais (Ícones e textos) */
+    .secao-diferenciais .flex {
+        gap: 30px !important; /* Espaçamento menor entre os itens */
+    }
+
+    .item-dif {
+        flex: 1 1 100% !important; /* Força cada um a ocupar a linha toda para ficar centralizado */
+        text-align: center;
+        padding: 10px !important;
+    }
+
+    .item-dif i {
+        font-size: 30px !important; /* Diminuímos o tamanho do ícone */
+        margin-bottom: 5px !important;
+    }
+
+    .item-dif h3 {
+        font-size: 16px !important; /* Ajuste da fonte do título */
+        margin-bottom: 5px !important;
+    }
+
+    .item-dif p {
+        font-size: 14px !important; /* Ajuste da fonte do texto */
+    }
+}
+
+/* ==========================================================================
+   BOTÕES E UTILITÁRIOS
+   ========================================================================== */
 .btn-comprar-zap {
-    display: inline-block; /* O botão só ocupa o tamanho do texto + padding */
+    display: inline-block;
     background-color: #25d366;
     color: white;
-    padding: 12px 25px; /* Ajuste o tamanho: vertical horizontal */
-    text-decoration: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    margin-top: 15px; /* Espaço entre o preço e o botão */
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Botões de Marketplace */
-.opcoes-marketplace {
-    display: flex;
-    flex-wrap: wrap; /* Isso faz com que, se não couber tudo, eles pulem de linha sozinhos */
-    gap: 5px;
-    justify-content: center;
+    text-decoration: none;
     margin-top: 10px;
-}
-
-.btn-market {
-    font-size: 0.9em; /* Aumentamos um pouco o tamanho */
     font-weight: bold;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    background-color: #f0f0f0; /* Um fundo cinza claro para destacar */
-    color: #333; /* Cor do texto */
-    transition: 0.3s;
 }
 
 .btn-icon img {
-    width: 35px; /* Tamanho fixo para todos os ícones */
+    width: 35px;
     height: 35px;
-    object-fit: contain; /* Garante que a imagem não distorça */
-    transition: transform 0.2s; /* Efeito de zoom ao passar o mouse */
-    filter: grayscale(20%); /* Fica levemente cinza */
+    margin: 5px;
 }
 
-.btn-icon:hover img {
-    transform: scale(1.1); /* Aumenta um pouquinho ao passar o mouse */
-    filter: grayscale(0%); /* Fica com a cor original */
-}
-    
-/* Efeito de passar o mouse */
-.btn-market:hover {
-    background-color: #ddd;
+/* Remove os pontos das listas no rodapé */
+.footer-column ul {
+    list-style: none; /* Isso remove os pontos */
+    padding: 0;
+    text-align: center; /* Centraliza os links */
 }
 
-/* Shopee */
-.btn-market:nth-child(1):hover { color: #ee4d2d; }
+/* Ajusta os links para ficarem bem espaçados */
+.footer-column ul li {
+    margin-bottom: 10px; /* Espaço entre cada link */
+}
 
-/* Mercado Livre */
-.btn-market:nth-child(2):hover { color: #3483fa; }
+.footer-column ul li a {
+    display: block; /* Faz o link ocupar a linha toda, facilitando o clique */
+    text-decoration: none;
+    color: #0086dfe1;
+    font-weight: bold;
+}
 
-/* TikTok Shop */
-.btn-market:nth-child(3):hover { color: #000000; }
+/* Esconde o botão mobile no desktop */
+/* 1. Esconde o botão em telas grandes (desktop) */
+.btn-mobile-apenas button{
+    background-color: #d4af37;
+    color: #000;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 2. Regras específicas para celulares */
+@media (max-width: 768px) {
+    .btn-mobile-apenas {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px; /* Espaço entre a foto e o botão */
+        width: 100%;
+    }
+}
