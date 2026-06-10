@@ -326,3 +326,49 @@ header .interface {
         width: 100%;
     }
 }
+
+@media (max-width: 768px) {
+    .btn-desktop-apenas { display: none !important; }  /* Esconde o do texto */
+    .btn-mobile-apenas { display: block !important; }  /* Mostra o da foto */
+}
+
+/* FORÇA O LAYOUT DO PC COMO ERA ANTES */
+@media (min-width: 769px) {
+    /* Seleciona o botão dentro da div do texto */
+    .btn-desktop-apenas button {
+        background-color: #d4af37 !important; /* A cor dourada que você usa */
+        color: #000 !important;              /* A cor do texto preta */
+        padding: 10px 25px !important;
+        border: none !important;
+        border-radius: 5px !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+    }
+
+    .txt-topo {
+        text-align: left !important; /* Alinhamento original */
+        max-width: 450px !important; /* Tamanho original da caixa de texto */
+    }
+
+    /* Garante que o botão original do PC apareça */
+    .btn-perfil {
+        display: block !important; 
+    }
+
+    /* Garante que o botão exclusivo do mobile SUMA no PC */
+    .btn-mobile-apenas {
+        display: none !important;
+    }
+
+    /* Restaura o tamanho dos ícones e textos dos boxes de criação no PC */
+    .item-dif i {
+        font-size: 40px !important; /* Tamanho original maior */
+    }
+    .item-dif h3 {
+        font-size: 20px !important; /* Tamanho original da fonte */
+    }
+
+    .item-produto-box i { font-size: 40px !important; }
+    .secao-sobre p { font-size: 18px !important; }
+}
+
