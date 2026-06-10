@@ -311,3 +311,138 @@ img, video {
     max-width: 100%;
     height: auto;
 }
+
+/* CSS do Rodapé */
+.footer {
+    background-color: #665234;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 300px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #ff9900;
+}
+
+.footer-column a {
+    color: #0086dfe1; /* Escolha a cor que você quiser para os links */
+    text-decoration: none; /* Remove aquele sublinhado feio */
+    font-weight: bold;
+}
+
+.footer-column p {
+    color: #0086dfe1; 
+}
+
+.info-text {
+    color: #0086dfe1; /* Ajuste para a cor clara que você deseja */
+    display: inline; /* Garante que não quebre linha */
+    white-space: nowrap; /* Impede a quebra de linha forçada */
+    font-weight: bold;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #0086dfe1;
+    font-size: 0.9em;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #000000;
+}
+
+/* Estilo do Card */
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-produto {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background: #fff;
+    max-width: 300px; /* Isso limita o card a no máximo 300px de largura */
+    margin: 0 auto;   /* Isso centraliza o card na página */
+}
+
+/* Botão WhatsApp */
+.btn-comprar-zap {
+    display: inline-block; /* O botão só ocupa o tamanho do texto + padding */
+    background-color: #25d366;
+    color: white;
+    padding: 12px 25px; /* Ajuste o tamanho: vertical horizontal */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px; /* Espaço entre o preço e o botão */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Botões de Marketplace */
+.opcoes-marketplace {
+    display: flex;
+    flex-wrap: wrap; /* Isso faz com que, se não couber tudo, eles pulem de linha sozinhos */
+    gap: 5px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-market {
+    font-size: 0.9em; /* Aumentamos um pouco o tamanho */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #f0f0f0; /* Um fundo cinza claro para destacar */
+    color: #333; /* Cor do texto */
+    transition: 0.3s;
+}
+
+.btn-icon img {
+    width: 35px; /* Tamanho fixo para todos os ícones */
+    height: 35px;
+    object-fit: contain; /* Garante que a imagem não distorça */
+    transition: transform 0.2s; /* Efeito de zoom ao passar o mouse */
+    filter: grayscale(20%); /* Fica levemente cinza */
+}
+
+.btn-icon:hover img {
+    transform: scale(1.1); /* Aumenta um pouquinho ao passar o mouse */
+    filter: grayscale(0%); /* Fica com a cor original */
+}
+    
+/* Efeito de passar o mouse */
+.btn-market:hover {
+    background-color: #ddd;
+}
+
+/* Shopee */
+.btn-market:nth-child(1):hover { color: #ee4d2d; }
+
+/* Mercado Livre */
+.btn-market:nth-child(2):hover { color: #3483fa; }
+
+/* TikTok Shop */
+.btn-market:nth-child(3):hover { color: #000000; }
