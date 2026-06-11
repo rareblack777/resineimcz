@@ -2,6 +2,8 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <link rel="stylesheet" href="style.css">
   <title>Redes Sociais | Resinei Mcz</title>
   
@@ -13,13 +15,51 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
     }
-    
-    /* Uma camada escura para o texto continuar legível sobre o mármore */
+
+    .btn-social {
+    display: block;
+    width: 80%; /* Ocupa 80% da largura da tela */
+    max-width: 300px;
+    padding: 20px; /* Mais área de toque */
+    margin: 10px auto;
+    text-align: center;
+    background-color: #25d366; /* Cor do Zap/Instagram */
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+  /* Uma camada escura para o texto continuar legível sobre o mármore */
     .overlay {
       background: rgba(10, 15, 20, 0.527); 
       min-height: 100vh;
       padding: 40px;
     }
+
+    .btn-nav-site {
+        display: inline-block;
+        margin-top: 40px;
+        padding: 20px 40px;
+        background-color: rgba(212, 175, 55, 0.1); /* Fundo dourado suave */
+        border: 2px solid #d4af37;
+        color: #d4af37;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .btn-nav-site:active {
+        transform: scale(0.95); /* Efeito de "apertar" o botão no celular */
+        background-color: #d4af37;
+        color: #000;
+    }
+
   </style>
 </head>
 
@@ -33,9 +73,11 @@
         <a href="https://www.tiktok.com/@resineimcz" class="btn-comprar-zap" style="width: 250px;">TikTok</a>
       </div>
 
-      <div style="margin-top: 60px;">
-        <a href="index.html" style="color: #000000; text-decoration: underline;">CONHEÇA NOSSO SITE</a>
-      </div>
+      <div style="margin-top: 40px;">
+    <a href="index.html" class="btn-nav-site">
+    CONHEÇA NOSSO SITE
+</a>
+</div>
     </main>
   </div>
 </body>
