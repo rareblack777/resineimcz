@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    /* Isso cria a "ancoragem de pressão" premium */
+    background-image: url('images/hero.png');
+    background-attachment: fixed; /* Mantém a imagem "ancorada" */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Filtro de opacidade sem afetar o texto */
+    background-color: #0a0f14;
+    background-blend-mode: soft-light; /* Escurece a imagem para destacar o texto */
+  }
+
+  /* Opcional: Escurece a imagem globalmente para o texto destacar */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Ajuste a opacidade aqui */
+    z-index: 1;
+    pointer-events: none; /* Permite clicar no site normalmente */
+  }
+  
+</style>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
@@ -18,7 +49,7 @@
       <nav class="menu-desktop">
         <ul>
           <li><a href="index.html">Início</a></li>
-          <li><a href="#nossas-criacoes">Catálogo</a></li>
+          <li><a href="portifolio.html">Nosso Portfólio</a></li>
           <li><a href="#sobre">Sobre a Arte</a></li>
         </ul>
       </nav>
@@ -27,12 +58,12 @@
   </header>
 
   <main>
-    <section class="secao-topo">
+    <section class="secao-topo fundo-parallax">
   <div class="interface">
     <div class="flex">
       <div class="txt-topo">
-   <h1>Somos a Resinei Mcz ♥.</h1>
-   <p>Temos o presente perfeito ao seu alcance!</p>
+   <h1>Somos a Resinei Mcz ♥</h1>
+   <p>Temos o presente perfeito ao seu alcance!</p><br>
    <div class="btn-desktop-apenas">
        <a href="#nossas-criacoes"><button>Ver Coleções</button></a>
    </div>
@@ -41,7 +72,9 @@
       <div class="img-topo">
         <img src="images/chaveiros.jpeg" alt="Destaque" style="max-width: 350px; border-radius: 20px;">
         <div class="btn-mobile-apenas">
-           <a href="#nossas-criacoes"><button>Ver Coleções</button></a>
+           <a href="#nossas-criacoes" style="background-color: #ff9900; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+                VER COLEÇÕES
+            </a>
         </div>
       </div>
 
@@ -98,9 +131,9 @@
         <div class="footer-column">
             <h3>Institucional</h3>
             <ul>
-                <li><a href="#">Sobre Nós</a></li>
-                <li><a href="#">Política de Envio</a></li>
-                <li><a href="#">Trocas e Devoluções</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="politica-de-envio.html">Política de Envio</a></li>
+                <li><a href="trocas-e-devolucoes.html">Trocas e Devoluções</a></li>
             </ul>
         </div>
 
