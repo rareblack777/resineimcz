@@ -480,3 +480,7 @@ header .interface {
     }
 }
 
+.footer-column a h3:hover {
+    filter: brightness(1.2); /* Dá um efeito visual de que é clicável */
+    text-decoration: none;
+}
