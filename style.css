@@ -188,82 +188,20 @@ header .interface {
     padding: 20px;
 }
 
+.sidebar ul li a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #ff9900 !important; /* A cor dourada da sua marca */
+}
+
 .content-main {
     margin-left: 250px;
     padding: 40px;
-}
-
-/* ==========================================================================
-   CORREÇÃO FINAL DE RESPONSIVIDADE PARA CELULAR (ADICIONAR AO FINAL)
-   ========================================================================== */
-@media (max-width: 768px) {
-    /* 1. Ajuste da Logo e Cabeçalho */
-    header .interface {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .logo img {
-        max-width: 100px !important; /* Diminui a logo no celular */
-    }
-
-    .menu-desktop ul {
-        gap: 20px !important; /* Diminui o espaço do menu */
-    }
-
-    /* 2. Ajuste do Topo (Imagem e Vídeo lado a lado) */
-    .secao-topo .flex {
-        gap: 20px !important; /* Diminui o espaçamento */
-    }
-
-    .img-topo {
-        flex: 1 1 45% !important; /* Força os dois a dividirem o espaço */
-        max-width: 45% !important;
-    }
-
-    .img-topo img, 
-    .img-topo video {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
-    /* 3. Ajuste do Grid de Produtos (2 colunas) */
-    .secao-produtos .flex {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 10px !important;
-    }
-
-    .item-produto-box {
-        max-width: 100% !important;
-        height: 150px !important; /* Altura reduzida para mobile */
-    }
-
-    /* 4. Ajuste dos Diferenciais (Ícones e textos) */
-    .secao-diferenciais .flex {
-        gap: 30px !important; /* Espaçamento menor entre os itens */
-    }
-
-    .item-dif {
-        flex: 1 1 100% !important; /* Força cada um a ocupar a linha toda para ficar centralizado */
-        text-align: center;
-        padding: 10px !important;
-    }
-
-    .item-dif i {
-        font-size: 30px !important; /* Diminuímos o tamanho do ícone */
-        margin-bottom: 5px !important;
-    }
-
-    .item-dif h3 {
-        font-size: 16px !important; /* Ajuste da fonte do título */
-        margin-bottom: 5px !important;
-    }
-
-    .item-dif p {
-        font-size: 14px !important; /* Ajuste da fonte do texto */
-    }
 }
 
 /* ==========================================================================
@@ -317,19 +255,66 @@ header .interface {
     cursor: pointer;
 }
 
-/* 2. Regras específicas para celulares */
-@media (max-width: 768px) {
-    .btn-mobile-apenas {
-        display: flex;
-        justify-content: center;
-        margin-top: 15px; /* Espaço entre a foto e o botão */
-        width: 100%;
-    }
-}
 
+/* ==========================================================================
+   BLOCO ÚNICO DE RESPONSIVIDADE (SUBSTITUA TODOS OS ANTIGOS POR ESTE)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .btn-desktop-apenas { display: none !important; }  /* Esconde o do texto */
-    .btn-mobile-apenas { display: block !important; }  /* Mostra o da foto */
+    /* 1. Ajustes Gerais */
+    body { width: 100% !important; margin: 0 !important; padding: 0 !important; overflow-x: hidden; }
+
+    /* 2. Cabeçalho */
+    header .interface { flex-direction: column; text-align: center; gap: 15px; }
+    .logo img { max-width: 100px !important; }
+    .menu-desktop ul { gap: 20px !important; }
+
+    /* 3. Topo */
+    .secao-topo .flex { gap: 20px !important; }
+    .img-topo { flex: 1 1 45% !important; max-width: 45% !important; }
+    .img-topo img, .img-topo video { max-width: 100% !important; height: auto !important; }
+
+    /* 4. Menu Lateral (Sidebar) e Links */
+    .sidebar {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        background: #0d131a;
+        padding: 15px 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .sidebar ul {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        padding: 0 !important;
+        list-style: none !important; /* Remove bolinhas */
+    }
+    .sidebar ul li a {
+        color: #ffffff !important; /* Remove cor roxa */
+        text-decoration: none !important;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    /* 5. Conteúdo Principal e Produtos */
+    .content-main { margin-left: 0 !important; padding: 10px !important; }
+    .secao-produtos .flex { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+    .item-produto-box { max-width: 100% !important; height: 150px !important; }
+
+    /* 6. Diferenciais */
+    .secao-diferenciais .flex { gap: 30px !important; }
+    .item-dif { flex: 1 1 100% !important; text-align: center; padding: 10px !important; }
+    .item-dif i { font-size: 30px !important; }
+    .item-dif h3 { font-size: 16px !important; }
+    .item-dif p { font-size: 14px !important; }
+
+    /* 7. Botões Mobile */
+    .btn-mobile-apenas { display: block !important; justify-content: center; margin-top: 15px; width: 100%; }
+    .btn-desktop-apenas { display: none !important; }
 }
 
 /* FORÇA O LAYOUT DO PC COMO ERA ANTES */
@@ -425,60 +410,7 @@ header .interface {
     }
 }
 
-/* FORÇANDO LIMPEZA NO CELULAR PARA PÁGINAS INTERNAS */
-@media (max-width: 768px) {
-    /* 1. Esconde o menu lateral que está invadindo a página */
-    .sidebar, .menu-lateral, nav.lateral {
-        display: none !important;
-    }
 
-    /* 2. Expande o conteúdo principal para ocupar 100% da largura */
-    body {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        overflow-x: hidden; /* Corta qualquer coisa que tente ultrapassar a largura */
-    }
-
-    /* 3. Ajusta o container principal da página interna */
-    /* Substitua '.content-main' pela classe que envolve o conteúdo no chaveiros.html */
-    .content-main, .container-interno {
-        width: 100% !important;
-        margin-left: 0 !important;
-        padding: 10px !important;
-        display: block !important; /* Força empilhamento */
-    }
-}
-
-@media (max-width: 768px) {
-    /* 1. Faz o menu ocupar pouco espaço no topo, não a tela toda */
-    .sidebar {
-        position: relative !important;
-        width: 100% !important;
-        height: auto !important; /* Altura automática baseada no conteúdo */
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center;
-        padding: 10px 0 !important;
-        background: #000; /* Ajuste conforme a cor do seu fundo */
-    }
-
-    /* 2. Remove o espaço da lista de links */
-    .sidebar ul {
-        display: flex;
-        flex-direction: row; /* Coloca os links lado a lado se couberem */
-        flex-wrap: wrap;     /* Quebra linha se necessário */
-        justify-content: center;
-        gap: 15px;
-        padding: 0 !important;
-    }
-
-    /* 3. Ajusta o conteúdo principal para subir e ocupar o topo */
-    .content-main {
-        margin-top: 0 !important;
-        padding-top: 10px !important;
-    }
-}
 
 .footer-column a h3:hover {
     filter: brightness(1.2); /* Dá um efeito visual de que é clicável */
