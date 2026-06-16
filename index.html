@@ -6,18 +6,18 @@
   body {
     margin: 0;
     padding: 0;
-    /* Isso cria a "ancoragem de pressão" premium */
+    /* ancoragem de pressão */
     background-image: url('images/hero.png');
     background-attachment: fixed; /* Mantém a imagem "ancorada" */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* Filtro de opacidade sem afetar o texto */
+    /* Filtro de opacidade  */
     background-color: #0a0f14;
-    background-blend-mode: soft-light; /* Escurece a imagem para destacar o texto */
+    background-blend-mode: soft-light; /* Escurecer imagem  */
   }
 
-  /* Opcional: Escurece a imagem globalmente para o texto destacar */
+  /* Escurecimento global */
   body::before {
     content: "";
     position: fixed;
@@ -27,7 +27,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0); /* Ajuste a opacidade aqui */
     z-index: 1;
-    pointer-events: none; /* Permite clicar no site normalmente */
+    pointer-events: none; /* clicar no site normalmente */
   }
   
 </style>
@@ -106,7 +106,7 @@
       <div class="interface">
         <h2 class="titulo">NOSSAS <span>CRIAÇÕES</span></h2>
         <div class="flex">
-          <!-- Card Chaveiro Editado -->
+          <!-- Card Chaveiro -->
           <a href="chaveiros.html" class="item-produto-box">
             <div class="icone-chaveiro">
               <i class="bi bi-circle"></i>
@@ -159,6 +159,17 @@
         </div>
       </div>
   </footer>
+
+  <div id="modal-imagem" onclick="this.style.display='none'" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); cursor:pointer;">
+  <img id="imagem-ampliada" style="display:block; margin:auto; max-width:90%; max-height:90%; margin-top:5%;">
+</div>
+
+<script>
+  function abrirImagem(src) {
+    document.getElementById('imagem-ampliada').src = src;
+    document.getElementById('modal-imagem').style.display = 'block';
+  }
+</script>
 
 </body>
 </html>

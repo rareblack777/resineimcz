@@ -484,3 +484,21 @@ header .interface {
     filter: brightness(1.2); /* Dá um efeito visual de que é clicável */
     text-decoration: none;
 }
+
+/* Esconde os itens além do limite */
+.card-produto.oculto {
+    display: none;
+}
+
+/* O estilo do botão */
+.btn-carregar-mais {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
