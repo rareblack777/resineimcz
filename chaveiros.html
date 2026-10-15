@@ -524,12 +524,17 @@
       }
     });
 
-    // LÓGICA COMPRAR VIA WHATSAPP
+    // LÓGICA COMPRAR VIA WHATSAPP (ATUALIZADA COM O LINK DA PÁGINA)
     document.querySelectorAll('.btn-zap-custom').forEach(button => {
       button.addEventListener('click', function() {
         const nome = this.getAttribute('data-nome');
         const numero = "5582999936156";
-        const mensagem = `Olá! Gostaria de encomendar o ${nome}. Poderia me dar mais informações?`;
+        
+        // Pega a URL atual do site para enviar junto no WhatsApp (gera automaticamente o preview da foto se configurado)
+        const linkPagina = window.location.href;
+
+        const mensagem = `Olá! Gostaria de encomendar o *${nome}* (R$ 15,00).\n\nVi no site: ${linkPagina}`;
+        
         window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, '_blank');
       });
     });
