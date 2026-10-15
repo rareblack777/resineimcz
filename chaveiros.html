@@ -152,7 +152,6 @@
     </div>
 
     <div class="grid-produtos">
-      <!-- ADICIONADO O ATRIBUTO data-letra EM CADA CARD -->
       <div class="card-produto" data-letra="A">
         <img src="images/A1.jpg" alt="Chaveiro Personalizado" onclick="abrirImagem(this.src)" style="cursor:pointer;">
         <h3> Chaveiro A <br><br> Divisão Lilás e translucido </h3><h4> com Detalhes em ouro e gliter </h4> <br>
@@ -309,7 +308,7 @@
 
       <div class="card-produto oculto" data-letra="R">
         <img src="images/R1.jpg" alt="Chaveiro Personalizado" onclick="abrirImagem(this.src)" style="cursor:pointer;">
-        <h3> Chaveiro R <br><br> Verde semi esmeralda  </h3><h4> com Detalhes em ouro e gliter </h4> <br>
+        <h3> Chaveiro R <br><br> Verde semi esmeralda </h3><h4> com Detalhes em ouro e gliter </h4> <br>
         <p class="preco"> <h2>R$ 15,00</h2></p>
         <button class="btn-comprar-zap btn-zap-custom" data-nome="Chaveiro R">
           <i class="bi bi-whatsapp"></i> Comprar via WhatsApp
@@ -419,7 +418,7 @@
         </div>
       </div>
 
-            <button id="btnVerMais" class="btn-carregar-mais">Carregar mais produtos</button>
+      <button id="btnVerMais" class="btn-carregar-mais">Carregar mais produtos</button>
     </div> 
   </main>
 
@@ -524,16 +523,20 @@
       }
     });
 
-    // LÓGICA COMPRAR VIA WHATSAPP (ATUALIZADA COM O LINK DA PÁGINA)
+    // LÓGICA COMPRAR VIA WHATSAPP (ENVIA LINK DIRETO DA IMAGEM)
     document.querySelectorAll('.btn-zap-custom').forEach(button => {
       button.addEventListener('click', function() {
         const nome = this.getAttribute('data-nome');
         const numero = "5582999936156";
         
-        // Pega a URL atual do site para enviar junto no WhatsApp (gera automaticamente o preview da foto se configurado)
-        const linkPagina = window.location.href;
+        // Pega o elemento do card do produto
+        const card = this.closest('.card-produto');
+        
+        // Pega a URL absoluta da imagem (ex: https://rareblack777.github.io/resineimcz/images/A1.jpg)
+        const imgElement = card.querySelector('img');
+        const linkImagem = imgElement ? imgElement.src : '';
 
-        const mensagem = `Olá! Gostaria de encomendar o *${nome}* (R$ 15,00).\n\nVi no site: ${linkPagina}`;
+        const mensagem = `Olá! Gostaria de encomendar o *${nome}* (R$ 15,00).\n\nFoto do produto: ${linkImagem}`;
         
         window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, '_blank');
       });
